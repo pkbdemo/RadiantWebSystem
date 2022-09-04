@@ -1,0 +1,132 @@
+.tableDetail {
+    padding: 0 10px;
+}
+
+.search {
+    position: relative;
+    width: 100%;
+    margin: 17px 0 14px 0;
+}
+
+.selectSpan {
+    width: 56px;
+    height: 21px;
+    /* Body - TC/14px Regular */
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height, or 150% */
+    text-transform: capitalize;
+    /* Function/Secondary text */
+    color: #3F4852;
+    /* 超出隐藏 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.search-box,
+.SecuritySelect {
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.search-box {
+    position: relative;
+    top: -9px;
+}
+
+.search-box button {
+    border-radius: 0 4px 4px 0;
+}
+
+.SecuritySelect {
+    width: 140px;
+    border: 0px;
+}
+
+.SecuritySelect button {
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    background-color: #F6F6F6;
+}
+
+.SecuritySelect em {
+    vertical-align: top;
+}
+
+.SecuritySelect span {
+    width: 90px;
+    vertical-align: super;
+}
+
+.SecuritySelect b {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: #3074B8;
+    vertical-align: middle;
+    color: #fff;
+    border-radius: 4px;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.selectBGC {
+    background-color: #B8D5FF !important;
+}
+
+.CloseBtn {
+    position: relative;
+    top: -9px;
+    display: inline-block;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height, or 150% */
+    text-transform: capitalize;
+    /* Function/Tertiary text */
+}
+
+.CloseBtn a {
+    color: #959EA9;
+}
+
+.searchRight {
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    right: 30px;
+}
+
+.searchRight div {
+    display: inline-block;
+    margin-right: 16px;
+}
+
+.searchRight button {
+    width: 88px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    background: #3074B8;
+    /* display: inline-block; */
+    color: #fff;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.searchRight img {
+    margin-right: 16px;
+    vertical-align: baseline;
+}

@@ -1,0 +1,80 @@
+<div class="search">
+    <div class="search-box">
+        <input type="text" nz-input placeholder="搜索公司全稱、負責人..." [(ngModel)]="searchValue" style="    margin-left: 32px;
+        width: 250px; border-radius: 4px 0 0 4px;" />
+        <button nz-button nzSize="small" nzType="primary" (click)="search()" class="search-button" style="height: 32px;
+        width: 32px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+          </svg>    
+    </button>
+
+    </div>
+    <div class="SecuritySelect">
+        <button nz-button nz-dropdown [nzClickHide]="false" [nzPlacement]="'bottomCenter'" [nzDropdownMenu]="menu4" [ngClass]="listOfSecurityValue.length > 0 ? 'selectBGC' : ''">
+            <span class="selectSpan">
+                證券種類
+                <b class="bubbleCount" *ngIf="listOfSecurityValue.length > 0">{{listOfSecurityValue.length}}</b>
+            </span>
+            <em (click)="closeSelectValue('Security')">
+                <img src="../../../../../assets/images/icon/Vector_down.svg" alt="" *ngIf="listOfSecurityValue.length == 0">
+                <img src="../../../../../assets/images/icon/Vector_close.svg" alt="" *ngIf="listOfSecurityValue.length > 0">
+            </em>
+        </button>
+        <nz-dropdown-menu #menu4="nzDropdownMenu">
+            <ul nz-menu>
+                <li nz-menu-item *ngFor="let data of selectCompanyValud">
+                    <label nz-checkbox [(ngModel)]="data.checked" (ngModelChange)="CompanyTransaction(data)" [nzDisabled]="data.disabled">{{data.label}}</label>
+                </li>
+            </ul>
+        </nz-dropdown-menu>
+    </div>
+    <div class="SecuritySelect">
+        <button nz-button nz-dropdown [nzPlacement]="'bottomCenter'" [nzDropdownMenu]="menu5" [ngClass]="listOfStatusData != '' ? 'selectBGC' : ''">
+            <span class="selectSpan" >
+                 {{listOfStatusData != '' ? listOfStatusData : '進度'}}
+            </span>
+            <em (click)="closeSelectValue('Status')">
+                <img src="../../../../../assets/images/icon/Vector_down.svg" alt="" *ngIf="!(listOfStatusData != '')">
+                <img src="../../../../../assets/images/icon/Vector_close.svg" alt="" *ngIf="listOfStatusData != ''">
+            </em>
+        </button>
+        <nz-dropdown-menu #menu5="nzDropdownMenu">
+            <ul nz-menu>
+                <li nz-menu-item *ngFor="let data of selectStatusValud" (click)="listOfStatusData = data.label">
+                    {{data.label}}
+                </li>
+            </ul>
+        </nz-dropdown-menu>
+    </div>
+    <div class="CloseBtn" *ngIf="listOfStatusData !='' || listOfSecurityValue.length> 0">
+        <a href=" javascript:void(0);" (click)="closeSelectValue('All')">清除</a>
+    </div>
+    <div class="searchRight">
+        <div>總共{{listOfDisplayData.length}}個項目</div>
+        <button>
+            <img src="../../../../../assets//images/icon/Vector_Add.svg" alt=""> 新增
+        </button>
+    </div>
+</div>
+<div class="tableDetail">
+    <nz-table class="whiteBGC" #sortTable [nzData]="listOfDisplayData" nzTableLayout="fixed" [nzSize]="'small'" [nzShowQuickJumper]="true" [nzShowSizeChanger]="true">
+        <thead>
+            <tr>
+                <th *ngFor="let column of listOfColumn; let key = index;" [nzSortFn]="column.compare" [nzSortPriority]="column.priority" [nzShowSort]="key === 0 || key ===2">
+                    {{ column.title }}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of sortTable.data; let key = index;">
+                <td>{{ data.name }}</td>
+                <td>{{ data.string_Agg }}</td>
+                <td>{{ data.status_Name }}</td>
+                <td>{{ data.decision_Result != null ? (data.decision_Result == 'True' ? 'Yes' : 'No') : data.decision_Result }}</td>
+                <td>{{ data.user_Name }}</td>
+                <td>{{ data.build_Date_Format }}</td>
+            </tr>
+        </tbody>
+    </nz-table>
+</div>

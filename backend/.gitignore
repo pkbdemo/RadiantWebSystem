@@ -1,0 +1,16 @@
+# IDE - Visual Studio
+.vs/*
+
+# IDE - VSCode
+.vscode/*
+BackendAPI/.vscode/*
+
+# Compiled output
+BackendAPI/bin
+BackendAPI/obj
+
+# System log
+BackendAPI/Logs
+
+#SqliteDB
+BackendAPI/RadiantDB.db

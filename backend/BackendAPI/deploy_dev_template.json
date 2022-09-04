@@ -1,0 +1,40 @@
+{
+	"annotations": {
+		"cattle.io/timestamp": "xxxtimestamp"
+	},
+	"baseType": "workload",
+	"containers": [
+		{
+			"initContainer": false,
+			"restartCount": 0,
+			"stdin": true,
+			"stdinOnce": false,
+			"tty": true,
+			"allowPrivilegeEscalation": false,
+			"image": "xxximage",
+			"imagePullPolicy": "IfNotPresent",
+			"name": "ims-backend-dev",
+			"privileged": false,
+			"readOnly": false,
+			"resources": {
+				"type": "/v3/project/schemas/resourceRequirements",
+				"requests": {},
+				"limits": {}
+			},
+			"runAsNonRoot": false,
+			"terminationMessagePath": "/dev/termination-log",
+			"terminationMessagePolicy": "File",
+			"type": "container",
+			"capAdd": [],
+			"capDrop": [],
+			"environment": {
+				"TZ": "Asia/Taipei"
+			},
+			"environmentFrom": [],
+			"readinessProbe": null,
+			"livenessProbe": null,
+			"volumeMounts": []
+		}
+	],
+	"type": "deployment"
+}

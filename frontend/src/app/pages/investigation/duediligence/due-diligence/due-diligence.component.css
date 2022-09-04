@@ -1,0 +1,111 @@
+.dueDiligence {
+    font-size: 14px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    height: 55px;
+    padding: 17px 20px;
+}
+
+.headerLeft img {
+    margin-left: 15px;
+    margin-right: 28px;
+}
+
+.headerLeft span {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    margin-right: 16px;
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.header a {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #3F4852;
+}
+
+.headerLeft {
+    display: inline-block;
+}
+
+.headerRight {
+    position: absolute;
+    right: 30px;
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.headerRight img {
+    margin-left: 12px;
+}
+
+.detail {
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.nav {
+    padding: 0 10px;
+    margin-bottom: 1px;
+}
+
+.nav button {
+    width: 146px;
+}
+
+.clickBtn {
+    color: #3074B8;
+    border-bottom: 4px solid #3074B8;
+}
+
+.bubbleCount {
+    display: inline-block;
+    width: 24px;
+    height: 18px;
+    margin-left: 10px;
+    border-radius: 4px;
+    background-color: #E54C4C;
+    padding: 0px 5px;
+    vertical-align: bottom;
+    /* 文字样式 */
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    line-height: 18px;
+}
+
+.bBGC {
+    background-color: #4090E0 !important;
+}
+
+.tableList {
+    border-radius: 2px;
+}
+
+.initial {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background: #fffcf1;
+    border: 1px solid #fff5d1;
+    border-radius: 28px;
+    text-align: center;
+    color: #EFC223;
+    line-height: 28px;
+}

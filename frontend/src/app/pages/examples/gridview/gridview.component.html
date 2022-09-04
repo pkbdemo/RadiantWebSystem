@@ -1,0 +1,102 @@
+<script src="./resizable-columns-table.js"></script>
+<div class="body_scroll">
+  <div class="block-header">
+    <div class="row">
+      <div class="col-lg-7 col-md-6 col-sm-12">
+        <h2>Gridview Sample</h2>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/index"><i class="zmdi zmdi-home"></i> Home</a></li>
+          <li class="breadcrumb-item">Examples</li>
+          <li class="breadcrumb-item active">Gridview</li>
+        </ul>
+      </div>
+      <div class="col-lg-5 col-md-6 col-sm-12">
+        <button class="btn btn-primary btn-icon float-end right_icon_toggle_btn" type="button"
+          (click)="toggleRightBar()"><i class="zmdi zmdi-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row clearfix">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+          <div class="body">
+            <p>This sample show you how to do the gridview data binding, paging and sorting!</p>
+            <table style="width: 60%;">
+              <tr>
+                <td style="width: 5%;">
+                  <label>Name&nbsp;:</label>
+                </td>
+                <td style="width: 44%; ">
+                  <input [(ngModel)]="Name" name="Name" type="text" class="form-control" />
+                </td>
+                <td style="width: 2%;">
+                </td>
+                <td style="width: 5%;">
+                  <label style="text-align: right;">Age&nbsp;:</label>
+                </td>
+                <td style="width: 44%;">
+                  <input [(ngModel)]="Age" name="Age" type="text" class="form-control" />
+                </td>
+              </tr>
+            </table>
+            <div>
+              <button class="btn btn-primary" (click)="search()">Search</button>&nbsp;&nbsp;
+              <button class="btn btn-primary" (click)="reset()">Clear</button>
+              <span style="float: right;">Total Record {{ gridviewService.total$ | async }}</span>
+            </div>
+            <div class="form-group form-inline">
+              <span class="ml-3" *ngIf="gridviewService.loading$ | async">Loading</span>
+            </div>
+            <div class="table-responsive">
+              <div class="table-resize">
+                <table class="table table-striped">
+                  <thead>
+                    <tr class="bg-cyan">
+                      <th scope="col">
+                        <span sortable="user_ID" (sort)="onSort($event)">User ID</span>
+                      </th>
+                      <th scope="col">
+                        <span sortable="name" (sort)="onSort($event)">Name</span>
+                      </th>
+                      <th scope="col">Age</th>
+                      <th scope="col">Create By</th>
+                      <th scope="col">
+                        <span sortable="create_Date" (sort)="onSort($event)">Create Date</span>
+                      </th>
+                      <th scope="col">Modify By</th>
+                      <th scope="col">Modify Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let data of gridviewService.dataList$ | async">
+                      <td>{{ data.user_ID }}</td>
+                      <td>{{ data.name }}</td>
+                      <td>{{ data.age }}</td>
+                      <td>{{ data.createby }}</td>
+                      <td>{{ data.create_Date }}</td>
+                      <td>{{ data.modifyby }}</td>
+                      <td>{{ data.modify_Date }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between p-2">
+              <ngb-pagination [collectionSize]="(gridviewService.total$ | async)!" [(page)]="gridviewService.page"
+                [pageSize]=" gridviewService.pageSize" [maxSize]="7" [rotate]="true" [ellipses]="false"
+                [boundaryLinks]="true">
+              </ngb-pagination>
+              <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="gridviewService.pageSize">
+                <option [ngValue]="5">5 items per page</option>
+                <option [ngValue]="10">10 items per page</option>
+                <option [ngValue]="20">20 items per page</option>
+                <option [ngValue]="50">50 items per page</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+
+/* You can add global styles to this file, and also import other style files */
+span[sortable]
+{
+    cursor: pointer;
+}
+
+span[sortable]:before
+{
+    content: "";
+    display: block;
+    width: 18px;
+    height: 20px;
+    float: left;
+    background: url("/assets/icons/arrow-down-up.svg") no-repeat;
+}
+
+span[sortable].asc:before
+{
+    background: url("/assets/icons/arrow-up.svg") no-repeat;
+}
+
+span[sortable].desc:before
+{
+    background: url("/assets/icons/arrow-down.svg") no-repeat;
+}
+
+.dateImage
+{
+  cursor: pointer;
+  margin-left: 3px;
+}
+
+.cdk-overlay-container, .cdk-overlay-pane {
+  z-index: 9999 !important;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-inline .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+
+.table-responsive {
+  overflow-y: auto;
+  max-height: 420px;
+}
+.table-resize {
+  min-width: 100%;
+  resize: horizontal;
+  overflow-y: auto;
+  max-height: 400px;
+}
+table.table-striped {
+  border-collapse: collapse;
+  width:100%;
+}
+table.table-striped td,
+table.table-striped thead th {
+  padding: 5px;
+  text-align: left;
+}
+table.table-striped thead, textarea {
+  /* background-color: #333; */
+  color: #FDFDFD;
+}
+table.table-striped thead tr {
+  position: relative;
+}
+table.table-striped tbody tr:nth-child(even) {
+  background-color: #DDD;
+}
+
+table.table-striped thead th {
+  position: sticky;
+  top: 0;
+  background-color: #5CC5CD;
+  resize: horizontal;
+  overflow: auto;
+  min-width: 70px;
+}

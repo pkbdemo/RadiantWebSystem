@@ -1,0 +1,35 @@
+fieldset {
+    border-width: 2px;
+    border-style: groove;
+    padding: 10px;
+}
+
+legend {
+    width: auto;
+    padding: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nav-tabs {
+    padding: 0;
+}
+
+.tblViewdetail td, .tblViewNoticeDetail td {
+    padding: 5px 0;
+}
+
+.contactUsMsg {
+    font-size: 16px;
+    padding: 0 0 5px 5px;
+}
+
+.contactUsMsg a {
+    color:deeppink;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.contactUsMsg a:hover {
+    text-decoration: underline;
+}

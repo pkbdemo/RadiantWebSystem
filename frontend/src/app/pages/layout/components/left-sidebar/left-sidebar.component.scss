@@ -1,0 +1,31 @@
+#leftsidebar .list {
+    overflow-y: scroll;
+    width: auto;
+    height: calc(100vh - 65px);
+    scrollbar-width: none;
+    /* For Firefox */
+    -ms-overflow-style: none;
+    /* For Internet Explorer and Edge */
+    &::-webkit-scrollbar {
+        width: 0px;
+        /* For Chrome, Safari, and Opera */
+    }
+}
+
+.bubbleCount {
+    position: absolute;
+    right: 12px;
+    display: inline-block;
+    width: 24px;
+    height: 18px;
+    margin-left: 10px;
+    border-radius: 4px;
+    background-color: #E54C4C;
+    padding: 0px 5px;
+    vertical-align: bottom;
+    /* 文字样式 */
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    line-height: 18px;
+}

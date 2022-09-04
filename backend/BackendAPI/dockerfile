@@ -1,0 +1,5 @@
+FROM harbor.wistron.com/base_image/aspnet:6.0-alpine
+
+COPY bin/Release/net6.0/publish .
+
+ENTRYPOINT ["dotnet","BackendAPI.dll"]

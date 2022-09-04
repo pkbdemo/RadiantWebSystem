@@ -1,0 +1,37 @@
+<div class="body_scroll">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>Home</h2>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <button class="btn btn-primary btn-icon float-end right_icon_toggle_btn" type="button" (click)="toggleRightBar()"><i class="zmdi zmdi-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">
+                    <div class="body">
+
+                        <fieldset class="mb-4">
+                            <legend>
+                                <img src="../../../assets/icons/telephone-fill.svg" alt="" width="20" height="20" />
+                                Contact Us
+                            </legend>
+                            <div class="contactUsMsg">
+                                Any question, please send mail to
+                                <a href="mailto:{{ contactEmail }}">{{ contactEmail }}</a>
+                            </div>
+                        </fieldset>
+
+                        <div style="height: 400px;"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
