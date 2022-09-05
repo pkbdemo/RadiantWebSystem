@@ -2,21 +2,18 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<IDBHelper, PostgreSQLHelper>();
-// builder.Services.AddScoped<IKeyCloakUtil, KeyCloakUtil>();
 builder.Services.AddScoped<IExampleRepository, ExampleRepository>();
 builder.Services.AddScoped<IExampleService, ExampleService>();
-builder.Services.AddScoped<IInvestMainRepository, InvestMainRepository>();
 builder.Services.AddScoped<ITableListRepository, TableListRepository>();
-builder.Services.AddScoped<ISettingCodeDetailRepository, SettingCodeDetailRepository>();
-builder.Services.AddScoped<ISettingCodeMasterRepository, SettingCodeMasterRepository>();
 builder.Services.AddScoped<ISettingCodeListRepository, SettingCodeNameRepository>();
 builder.Services.AddScoped<IUtilitiesService, UtilitiesService>();
-
-
+builder.Services.AddScoped<ISettingService, SettingService>();
+builder.Services.AddScoped<ISettingRepository, SettingRepository>();
+builder.Services.AddScoped<IContentService, ContentService>();
+builder.Services.AddScoped<IContentRepository, ContentRepository>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 builder.Services.AddHttpClient();
-
 builder.Services.AddMvc().AddJsonOptions(json =>
 {
     json.JsonSerializerOptions.Converters.Add(new DateTimeJsonConverter());
@@ -37,15 +34,6 @@ builder.Services.AddCors(options =>
     );
 });
 
-// builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(x =>
-// {
-//     var serviceProvider = new ServiceCollection().AddHttpClient().BuildServiceProvider();
-//     IHttpClientFactory _httpClientFactory = serviceProvider.GetService<IHttpClientFactory>();
-//     KeyCloakUtil keyCloakUtil = new KeyCloakUtil(_httpClientFactory, null);
-//     x.TokenValidationParameters = keyCloakUtil.GetTokenValidationParametersAsync();
-// });
-
-// builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -84,12 +72,16 @@ builder.Services.AddSwaggerGen(x =>
     });
 });
 
+
 builder.Host.UseSerilog((ctx, lc) =>
 {
     lc.ReadFrom.Configuration(ctx.Configuration);
 });
 
 var app = builder.Build();
+
+// var sensorTimer = app.Services.GetService<SettingService>();
+// sensorTimer.QueryAll();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
