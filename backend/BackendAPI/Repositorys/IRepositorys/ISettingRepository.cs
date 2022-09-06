@@ -3,4 +3,5 @@
 public interface ISettingRepository
 {
     BasicSettingEntity QueryAll();
+    int AddData(WaterTemp temp);
 }

@@ -16,8 +16,8 @@ public class SettingController : ControllerBase
     [HttpPost]
     public ActionResult<BasicSettingEntity> QueryAll()
     {
-        var result = _settingService.QueryAll();
-        return Ok(result);
+        _settingService.QueryAll();
+        return Ok();
     }
 
 }

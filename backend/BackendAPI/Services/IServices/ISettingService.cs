@@ -2,5 +2,5 @@
 
 public interface ISettingService
 {
-    BasicSettingEntity QueryAll();
+    void QueryAll();
 }
