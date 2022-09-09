@@ -1,6 +1,6 @@
 export const IMSConstants = {
   serverErrorMsg: "Sorry, the system meet an error. Please contact the system admin.",
-  contactEmail: "BI_Support@wistron.com",
+  contactEmail: "Legion@hotmail.com",
   matomoURL: "https://matomo.wistron.com/",
   dateFormat: "yyyy-MM-dd",
   createSuccess: "Created successfully",

@@ -1,18 +1,18 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
 
-import { AdminComponent } from './layout/components/admin/admin.component';
+import { AdminComponent } from './layout/components/admin/admin.component'
 
-import { BasicformComponent } from './examples/basicform/basicform.component';
-import { AdvancedformComponent } from './examples/advancedform/advancedform.component';
-import { FormexamplesComponent } from './examples/formexamples/formexamples.component';
-import { FormvalidationComponent } from './examples/formvalidation/formvalidation.component';
-import { SummernoteComponent } from './examples/summernote/summernote.component';
-import { CallapiComponent } from "./examples/callapi/callapi.component";
-import { GridviewComponent } from './examples/gridview/gridview.component';
-import { IndexComponent } from './index/index.component';
+import { BasicformComponent } from './examples/basicform/basicform.component'
+import { AdvancedformComponent } from './examples/advancedform/advancedform.component'
+import { FormexamplesComponent } from './examples/formexamples/formexamples.component'
+import { FormvalidationComponent } from './examples/formvalidation/formvalidation.component'
+import { SummernoteComponent } from './examples/summernote/summernote.component'
+import { CallapiComponent } from './examples/callapi/callapi.component'
+import { GridviewComponent } from './examples/gridview/gridview.component'
+import { IndexComponent } from './index/index.component'
 import { DueDiligenceComponent } from './investigation/duediligence/due-diligence/due-diligence.component'
-
+import { RealTimeViewComponent } from './real-time/real-time-view.component'
 const routes: Routes = [
   {
     path: '',
@@ -31,14 +31,14 @@ const routes: Routes = [
       { path: 'formsummernote', component: SummernoteComponent },
       { path: 'callapi', component: CallapiComponent },
       { path: 'gridview', component: GridviewComponent },
-      { path: 'duediligence', component: DueDiligenceComponent }
-    ]
-  }
-];
+      { path: 'duediligence', component: DueDiligenceComponent },
+      { path: 'realtime', component: RealTimeViewComponent },
+    ],
+  },
+]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class PagesRoutingModule { }
-
+export class PagesRoutingModule {}
