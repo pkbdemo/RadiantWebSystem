@@ -58,6 +58,8 @@
 .detail {
     background-color: #fff;
     border-radius: 10px;
+    flex-wrap: wrap;
+    display: flex;
 }
 
 .nav {

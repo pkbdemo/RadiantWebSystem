@@ -10,7 +10,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular'
 import { ToastrModule } from 'ngx-toastr'
 import { en_US, NZ_I18N } from 'ng-zorro-antd/i18n'
-import { MatomoModule } from 'ngx-matomo'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -29,7 +28,6 @@ registerLocaleData(zh)
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    MatomoModule,
   ],
   providers: [
     // {

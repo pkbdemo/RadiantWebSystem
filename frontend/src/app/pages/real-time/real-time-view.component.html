@@ -1,7 +1,7 @@
 <div class="dueDiligence">
     <div class="header">
         <div class="headerLeft">
-            <img src="../../../../../assets/images/icon/Vector_more.svg" alt="">
+            <!-- <img src="../../../../../assets/images/icon/Vector_more.svg" alt=""> -->
             <span>即時資訊顯示</span>
             <!-- <a nz-dropdown [nzDropdownMenu]="menu" (nzVisibleChange)="Visible($event, 'List')">
             {{listSelected}}
@@ -15,7 +15,7 @@
                 </ul>
             </nz-dropdown-menu> -->
         </div>
-        <div class="headerRight">
+        <!-- <div class="headerRight">
             <div class="initial">
                 {{userName == null ? "" : (userName.substring(0, 1))}}
             </div>
@@ -30,10 +30,10 @@
                     <li nz-menu-item style="color:#E54C4C;">Logout</li>
                 </ul>
             </nz-dropdown-menu>
-        </div>
+        </div> -->
     </div>
     <div class="detail">
-        <div class="nav">
+        <!-- <div class="nav">
             <span *ngFor="let item of navBtn; let key = index">
             <button nz-button nzType="text" *ngIf="key != 1"  [ngClass]=" navCheckBtn == key ? 'clickBtn' : '' " > {{item.Code_Name}}</button>
             <button nz-button nzType="text" *ngIf="key == 1" [ngClass]=" navCheckBtn == key ? 'clickBtn' : '' " >
@@ -41,7 +41,11 @@
                 <b class="bubbleCount" [ngClass]="listSelected == 'All List' ? 'bBGC' : ''" >{{InProfressCount}}</b>
             </button>
         </span>
-        </div>
+        </div> -->
+        <div id="main" style="width: 600px;height:400px;"></div>
+        <div id="main2" style="width: 600px;height:400px;"></div>
+        <div id="main3" style="width: 600px;height:400px;"></div>
+        <div id="main4" style="width: 600px;height:400px;"></div>
         <!-- <div class="tableList">
             <app-table-list (InProfessCount)="InProfessCount($event)" #TableList [type]="type"></app-table-list>
         </div> -->

@@ -4,20 +4,20 @@
       <i class="zmdi zmdi-menu"></i>
     </button>
         <a routerLink="/index">
-            <img src="assets/images/wistron.png" width="100" alt="Wistron">
+            <img src="assets/images/radiant.png" width="230" alt="Wistron">
         </a>
     </div>
-    <div class="webSiteName">
+    <!-- <div class="webSiteName">
         <span>Investment Management System</span>
-    </div>
+    </div> -->
     <div class="menu">
         <ul class="list">
             <li>
                 <div class="user-info">
                     <div class="detail">
                         <h4>
-                            {{userDetails == null ? "" : userDetails.firstName}}
-                            <small>({{userDetails == null ? "" : userDetails.username.toUpperCase()}})</small>
+                            <!-- {{userDetails == null ? "" : userDetails.firstName}}
+                            <small>({{userDetails == null ? "" : userDetails.username.toUpperCase()}})</small> -->
                         </h4>
                     </div>
                 </div>
@@ -29,13 +29,13 @@
                 </a>
             </li>
 
-            <li>
+            <!-- <li>
                 <a routerLink="/duediligence" class="toggled waves-effect waves-block">
                     <i class="zmdi zmdi-view-dashboard"></i><span>盡職調查
                         <strong class="bubbleCount">{{InProfressCount}}</strong>
                     </span>
                 </a>
-            </li>
+            </li> -->
 
             <li>
                 <a routerLink="/realtime" class="toggled waves-effect waves-block">
@@ -45,7 +45,7 @@
 
             <li>
                 <a routerLink="" class="toggled waves-effect waves-block">
-                    <i class="zmdi zmdi-view-dashboard"></i><span>基金維護</span>
+                    <i class="zmdi zmdi-view-dashboard"></i><span>歷史查詢</span>
                 </a>
             </li>
 
