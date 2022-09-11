@@ -16,6 +16,7 @@ export class LeftSidebarComponent implements OnInit {
   accessToken: string
   responseResult: string
   userName: string
+  selectedMenu: string
 
   InProfressCount: number = this.layoutService.getInProfressCount(
     'InProfressCount',
@@ -55,5 +56,25 @@ export class LeftSidebarComponent implements OnInit {
 
   toggleSmallMenu() {
     this.layoutService.toggleLeftBar()
+  }
+
+  getColor(item: number): void {
+    switch (item) {
+      case 0:
+        this.selectedMenu = ''
+        break
+      case 1:
+        this.selectedMenu = '即時顯示'
+        break
+      case 2:
+        this.selectedMenu = '歷史查詢'
+        break
+      case 3:
+        this.selectedMenu = '參數設定'
+        break
+      case 4:
+        this.selectedMenu = '4'
+        break
+    }
   }
 }

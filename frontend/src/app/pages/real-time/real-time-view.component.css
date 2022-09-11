@@ -111,3 +111,8 @@
     color: #EFC223;
     line-height: 28px;
 }
+
+.filter-white{
+  filter: invert(97%) sepia(62%) saturate(13%) hue-rotate(221deg) brightness(104%) contrast(103%);
+  margin-bottom: 10px;
+}

@@ -24,7 +24,7 @@
             </li>
 
             <li>
-                <a routerLink="/index" class="toggled waves-effect waves-block">
+                <a routerLink="/index" (click)="getColor(0)" class="toggled waves-effect waves-block">
                     <i class="zmdi zmdi-view-dashboard"></i><span>Home</span>
                 </a>
             </li>
@@ -37,39 +37,39 @@
                 </a>
             </li> -->
 
-            <li>
-                <a routerLink="/realtime" class="toggled waves-effect waves-block">
-                    <i class="zmdi zmdi-view-dashboard"></i><span>即時顯示</span>
+            <li [ngStyle]="{'background-color':selectedMenu === '即時顯示' ? '#1890ff' : 'white' }">
+                <a routerLink="/realtime" (click)="getColor(1)" class="toggled waves-effect waves-block">
+                  <i class="zmdi zmdi-view-dashboard"></i><span [ngStyle]="{'color':selectedMenu === '即時顯示' ? 'white' : 'black' }">即時顯示</span>
+                </a>
+            </li>
+
+            <li [ngStyle]="{'background-color':selectedMenu === '歷史查詢' ? '#1890ff' : 'white' }">
+                <a routerLink="" (click)="getColor(2)"  class="toggled waves-effect waves-block">
+                    <i class="zmdi zmdi-view-dashboard"></i><span [ngStyle]="{'color':selectedMenu === '歷史查詢' ? 'white' : 'black' }">歷史查詢</span>
+                </a>
+            </li>
+
+            <li [ngStyle]="{'background-color':selectedMenu === '參數設定' ? '#1890ff' : 'white' }">
+                <a routerLink="" (click)="getColor(3)"  class="toggled waves-effect waves-block">
+                    <i class="zmdi zmdi-view-dashboard"></i><span [ngStyle]="{'color':selectedMenu === '參數設定' ? 'white' : 'black' }">參數設定</span>
                 </a>
             </li>
 
             <li>
                 <a routerLink="" class="toggled waves-effect waves-block">
-                    <i class="zmdi zmdi-view-dashboard"></i><span>歷史查詢</span>
+                    <i class="zmdi zmdi-view-dashboard"></i><span>空白</span>
                 </a>
             </li>
 
             <li>
                 <a routerLink="" class="toggled waves-effect waves-block">
-                    <i class="zmdi zmdi-view-dashboard"></i><span>金額記錄</span>
+                    <i class="zmdi zmdi-view-dashboard"></i><span>空白</span>
                 </a>
             </li>
 
             <li>
                 <a routerLink="" class="toggled waves-effect waves-block">
-                    <i class="zmdi zmdi-view-dashboard"></i><span>執行報表</span>
-                </a>
-            </li>
-
-            <li>
-                <a routerLink="" class="toggled waves-effect waves-block">
-                    <i class="zmdi zmdi-view-dashboard"></i><span>負責人維護</span>
-                </a>
-            </li>
-
-            <li>
-                <a routerLink="" class="toggled waves-effect waves-block">
-                    <i class="zmdi zmdi-view-dashboard"></i><span>匯率查詢</span>
+                    <i class="zmdi zmdi-view-dashboard"></i><span>空白</span>
                 </a>
             </li>
 

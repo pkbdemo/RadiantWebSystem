@@ -3,8 +3,8 @@ import { LayoutService } from '../layout/services/layout.service'
 import { HttpClient } from '@angular/common/http'
 import { ToastrService } from 'ngx-toastr'
 import { environment } from '../../../environments/environment'
-
 import * as echarts from 'echarts'
+import { NzButtonSize } from 'ng-zorro-antd/button'
 
 interface navBtnItem {
   Code_id: string
@@ -22,12 +22,23 @@ export class RealTimeViewComponent implements OnInit {
   navCheckBtn: number = 0
   InProfressCount: number = 0
   InProfressCountAll: number = 0
-
+  size: NzButtonSize = 'large'
   isShowVector: boolean = true
   isShowUserVector: boolean = true
-
+  selectedDiv: string = 'initial'
   listSelected: string = 'My List'
-
+  chart1: any
+  chart2: any
+  chart3: any
+  chart4: any
+  myChartGlobal1: any
+  myChartGlobal2: any
+  myChartGlobal3: any
+  myChartGlobal4: any
+  optionGlobal1: any
+  optionGlobal2: any
+  optionGlobal3: any
+  optionGlobal4: any
   navBtn: navBtnItem[] = [
     {
       Code_id: '',
@@ -49,10 +60,12 @@ export class RealTimeViewComponent implements OnInit {
     var chartDom2 = document.getElementById('main2')!
     var chartDom3 = document.getElementById('main3')!
     var chartDom4 = document.getElementById('main4')!
+
     var myChart = echarts.init(chartDom)
     var myChart2 = echarts.init(chartDom2)
     var myChart3 = echarts.init(chartDom3)
     var myChart4 = echarts.init(chartDom4)
+
     var option: EChartsOption
     var option2: EChartsOption
     var option3: EChartsOption
@@ -60,7 +73,7 @@ export class RealTimeViewComponent implements OnInit {
     const categories = (function () {
       let now = new Date()
       let res = []
-      let len = 20
+      let len = 30
       while (len--) {
         res.unshift(now.toLocaleTimeString().replace(/^\D*/, ''))
         now = new Date(+now - 2000)
@@ -69,15 +82,15 @@ export class RealTimeViewComponent implements OnInit {
     })()
     const categories2 = (function () {
       let res = []
-      let len = 20
+      let len = 30
       while (len--) {
-        res.push(20 - len - 1)
+        res.push(30 - len - 1)
       }
       return res
     })()
     const data: number[] = (function () {
       let res = []
-      let len = 20
+      let len = 30
       while (len--) {
         res.push(Math.round(Math.random() * 1000))
       }
@@ -86,7 +99,7 @@ export class RealTimeViewComponent implements OnInit {
     const data2: number[] = (function () {
       let res = []
       let len = 0
-      while (len < 20) {
+      while (len < 30) {
         res.push(+(Math.random() * 10 + 5).toFixed(1))
         len++
       }
@@ -384,7 +397,7 @@ export class RealTimeViewComponent implements OnInit {
         },
       ],
     }
-    app.count = 20
+    app.count = 30
     setInterval(function () {
       let axisData = new Date().toLocaleTimeString().replace(/^\D*/, '')
 
@@ -472,29 +485,101 @@ export class RealTimeViewComponent implements OnInit {
       })
     }, 2100)
 
+    this.chart1 = chartDom
+    this.chart2 = chartDom2
+    this.chart3 = chartDom3
+    this.chart4 = chartDom4
     option && myChart.setOption(option)
     option2 && myChart2.setOption(option2)
     option3 && myChart3.setOption(option3)
     option4 && myChart4.setOption(option4)
     //#endregion
+
+    this.myChartGlobal1 = myChart
+    this.myChartGlobal2 = myChart2
+    this.myChartGlobal3 = myChart3
+    this.myChartGlobal4 = myChart4
+
+    this.optionGlobal1 = option
+    this.optionGlobal2 = option2
+    this.optionGlobal3 = option3
+    this.optionGlobal4 = option4
   }
 
   ngAfterViewInit() {}
-
-  // InProfessCount(data: emitObj) {
-  //   if (data.type == 'All') {
-  //     this.InProfressCountAll = data.Notfrozen;
-  //   } else {
-  //     if (this.layoutService.getInProfressCount('InProfressCount') != null) this.layoutService.removeInProfressCount('InProfressCount');
-  //     this.layoutService.setInProfressCount('InProfressCount', data.Notfrozen);
-  //     this.InProfressCount = data.Notfrozen;
-  //   }
-  // }
 
   Visible(data: any, Type: string) {
     console.log(data)
 
     if (Type == 'List') this.isShowVector = !data
     else this.isShowUserVector = !data
+  }
+
+  selectDiv(item: number): void {
+    switch (item) {
+      case 1:
+        this.selectedDiv = '冰水出水'
+        this.chart1.style.width = '100' + '%'
+        this.chart1.style.height = '800' + '%'
+        this.myChartGlobal1.resize()
+        // this.myChartGlobal1.clear()
+        // this.myChartGlobal1.resize({
+        //   width: '1200%',
+        //   height: '600%',
+        // })
+
+        // this.myChartGlobal1.setOption(this.optionGlobal1)
+        // this.myChartGlobal1.resize()
+        break
+      case 2:
+        this.selectedDiv = '冰水入水'
+        this.chart2.style.width = '100' + '%'
+        this.chart2.style.height = '800' + '%'
+        this.myChartGlobal2.resize()
+        break
+      case 3:
+        this.selectedDiv = '冷卻水出水'
+        this.chart3.style.width = '100' + '%'
+        this.chart3.style.height = '800' + '%'
+        this.myChartGlobal3.resize()
+        break
+      case 4:
+        this.selectedDiv = '冷卻水入水'
+        this.chart4.style.width = '100' + '%'
+        this.chart4.style.height = '800' + '%'
+        this.myChartGlobal4.resize()
+        break
+    }
+  }
+
+  clearSelected(): void {
+    if (this.selectedDiv == '冰水出水') {
+      this.chart1.style.width = '50' + '%'
+      this.chart1.style.height = '400' + '%'
+      this.myChartGlobal1.resize()
+    } else if (this.selectedDiv == '冰水入水') {
+      this.chart2.style.width = '50' + '%'
+      this.chart2.style.height = '400' + '%'
+      this.myChartGlobal2.resize()
+    } else if (this.selectedDiv == '冷卻水出水') {
+      this.chart3.style.width = '50' + '%'
+      this.chart3.style.height = '400' + '%'
+      this.myChartGlobal3.resize()
+    } else if (this.selectedDiv == '冷卻水入水') {
+      this.chart4.style.width = '50' + '%'
+      this.chart4.style.height = '400' + '%'
+      this.myChartGlobal4.resize()
+    }
+
+    // this.chart2.style.width = '50' + '%'
+    // this.chart2.style.height = '400' + '%'
+    // this.myChartGlobal2.resize()
+    // this.chart3.style.width = '50' + '%'
+    // this.chart3.style.height = '400' + '%'
+    // this.myChartGlobal3.resize()
+    // this.chart4.style.width = '50' + '%'
+    // this.chart4.style.height = '400' + '%'
+    // this.myChartGlobal4.resize()
+    this.selectedDiv = 'initial'
   }
 }
