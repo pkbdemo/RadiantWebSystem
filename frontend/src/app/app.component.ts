@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { NavigationEnd, Router } from '@angular/router'
 import { KeycloakService } from 'keycloak-angular'
-// import { MatomoInjector, MatomoTracker } from 'ngx-matomo';
 import { filter } from 'rxjs'
 
 import { IMSConstants } from 'src/app/utils/IMSConstants'

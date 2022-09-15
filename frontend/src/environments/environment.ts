@@ -11,11 +11,10 @@
 
 export const environment = {
   production: false,
-  apiServerRootUrl: "http://localhost:5091/",
-  apiServerURL: "http://localhost:5091/api/",
-  matomoSiteId: -1
+  apiServerRootUrl: 'http://localhost:5091/',
+  apiServerURL: 'http://localhost:5091/api/',
   // keycloakConfig
-};
+}
 
 /*
  * For easier debugging in development mode, you can import the following file
