@@ -63,6 +63,7 @@ import { DueDiligenceComponent } from './investigation/duediligence/due-diligenc
 import { TableListComponent } from './investigation/duediligence/table-list/table-list.component'
 import { MaintainAreaComponent } from './investigation/duediligence/maintain-area/maintain-area.component'
 import { RealTimeViewComponent } from './real-time/real-time-view.component'
+import { ParameterSettingViewComponent } from './parameter-setting/parameter-setting.component'
 
 const MatDragDropModules = [
   ClipboardModule,
@@ -94,6 +95,7 @@ const MatDragDropModules = [
     RealTimeViewComponent,
     TableListComponent,
     MaintainAreaComponent,
+    ParameterSettingViewComponent,
   ],
 
   imports: [

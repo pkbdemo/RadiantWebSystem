@@ -13,6 +13,7 @@ import { GridviewComponent } from './examples/gridview/gridview.component'
 import { IndexComponent } from './index/index.component'
 import { DueDiligenceComponent } from './investigation/duediligence/due-diligence/due-diligence.component'
 import { RealTimeViewComponent } from './real-time/real-time-view.component'
+import { ParameterSettingViewComponent } from './parameter-setting/parameter-setting.component'
 const routes: Routes = [
   {
     path: '',
@@ -33,6 +34,7 @@ const routes: Routes = [
       { path: 'gridview', component: GridviewComponent },
       { path: 'duediligence', component: DueDiligenceComponent },
       { path: 'realtime', component: RealTimeViewComponent },
+      { path: 'parametersetting', component: ParameterSettingViewComponent },
     ],
   },
 ]
