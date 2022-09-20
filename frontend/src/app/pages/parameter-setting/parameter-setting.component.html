@@ -1,16 +1,82 @@
 <div class="dueDiligence">
   <div class="header">
     <div class="headerLeft">
-      <span>即時資訊顯示</span>
+      <span>參數設定</span>
       <!-- <span nz-icon nzType="rollback" nzTheme="outline"></span> -->
     </div>
   </div>
   <div class="detail"></div>
-  <button (click)="asdf()">asdf</button>
+  <!-- <button (click)="asdf()">asdf</button> -->
 
   <div style="text-align: center;">
-    <table>
+    <table style="width: 100%;">
       <tr>
+        <td style="width: 12%; font-size: 22px;">串口名稱</td>
+        <td>
+          <div>
+            <nz-select style="width: 100%;" ngModel="lucy">
+              <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+              <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+            </nz-select>
+          </div>
+        </td>
+        <td rowspan="29">
+          <!-- [hidden]="keyboard_hidden" -->
+          <div class="simple-keyboard"></div>
+        </td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">波特率</td>
+        <td>
+          <div>
+            <nz-select style="width: 100%;" ngModel="lucy">
+              <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+              <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+            </nz-select>
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">數據位</td>
+        <td>
+          <div>
+            <nz-select style="width: 100%;" ngModel="lucy">
+              <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+              <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+            </nz-select>
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">停止位</td>
+        <td>
+          <div>
+            <nz-select style="width: 100%;" ngModel="lucy">
+              <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+              <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+            </nz-select>
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">校驗位</td>
+        <td>
+          <div>
+            <nz-select style="width: 100%;" ngModel="lucy">
+              <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+              <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+            </nz-select>
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">
+          1號觸發繼電器°C
+        </td>
         <td>
           <div>
             <input
@@ -22,11 +88,10 @@
             />
           </div>
         </td>
-        <td rowspan="2">
-          <div [hidden]="keyboard_hidden" class="simple-keyboard"></div>
-        </td>
+        <td></td>
       </tr>
       <tr>
+        <td style="width: 12%; font-size: 22px;">2號觸發繼電器°C</td>
         <td>
           <div>
             <input
@@ -36,6 +101,205 @@
               placeholder="Tap on the virtual keyboard to start"
               (click)="clickNum2()"
             />
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">3號觸發繼電器°C</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">啟用第三組感測</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">USB路徑</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">1號冷水入水</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">1號冷水出水</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">1號冷卻水入水</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">1號冷卻水出水</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">2號冷水入水</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">2號冷水出水</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">2號冷卻水入水</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">2號冷卻水出水</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">3號冷水入水</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">3號冷水出水</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">3號冷卻水入水</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">3號冷卻水出水</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">1號繼電器開啟</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">1號繼電器關閉</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td style="width: 12%; font-size: 22px;">2號繼電器開啟</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">2號繼電器關閉</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">3號繼電器開啟</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">3號繼電器關閉</td>
+        <td>
+          <div>
+            TEST
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td style="width: 12%; font-size: 22px;">串口名稱</td>
+        <td>
+          <div>
+            TEST
           </div>
         </td>
         <td></td>

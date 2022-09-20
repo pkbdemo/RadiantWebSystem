@@ -3,7 +3,6 @@ import { LayoutService } from '../layout/services/layout.service'
 import { HttpClient } from '@angular/common/http'
 import { ToastrService } from 'ngx-toastr'
 import { environment } from '../../../environments/environment'
-import * as echarts from 'echarts'
 import { NzButtonSize } from 'ng-zorro-antd/button'
 import Keyboard from 'simple-keyboard'
 interface navBtnItem {
@@ -16,29 +15,10 @@ interface navBtnItem {
   styleUrls: ['./parameter-setting.component.css'],
 })
 export class ParameterSettingViewComponent implements OnInit {
-  type: string = ''
   userName: string
   userId: string
-  navCheckBtn: number = 0
-  InProfressCount: number = 0
-  InProfressCountAll: number = 0
   size: NzButtonSize = 'large'
-  isShowVector: boolean = true
-  isShowUserVector: boolean = true
-  selectedDiv: string = 'initial'
-  listSelected: string = 'My List'
-  chart1: any
-  chart2: any
-  chart3: any
-  chart4: any
-  myChartGlobal1: any
-  myChartGlobal2: any
-  myChartGlobal3: any
-  myChartGlobal4: any
-  optionGlobal1: any
-  optionGlobal2: any
-  optionGlobal3: any
-  optionGlobal4: any
+  isModalVisible: boolean = false
   navBtn: navBtnItem[] = [
     {
       Code_id: '',
@@ -76,6 +56,7 @@ export class ParameterSettingViewComponent implements OnInit {
     })
     // this.keyboard.destroy()
     this.keyboard_hidden = false
+    this.isModalVisible = true
   }
   clickNum2() {
     this.keyboard.destroy()
